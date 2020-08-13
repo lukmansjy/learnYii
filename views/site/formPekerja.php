@@ -33,4 +33,26 @@ use yii\helpers\Html;
             ActiveForm::end();
         ?>
     </div>
+    <div class="col-sm-6">
+        <table class="table table-bordered table-hover">
+            <tr class="success">
+                <th>Nama</th>
+                <th>Jabatan</th>
+                <th>Email</th>
+                <th>Keterangan</th>
+            </tr>
+            <?php
+            foreach ($dataPekerja as $row) {
+            ?>
+            <tr>
+                <td><?= $row->nama ?></td>
+                <td><?= $row->labelJabatan() ?></td>
+                <td><?= $row->email ?></td>
+                <td><?= $row->keterangan ?></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
+    </div>
 </div>

@@ -20,6 +20,19 @@ class Pekerja extends ActiveRecord{
             3 => 'Supervisor'
         ];
     }
+
+    public function labelJabatan(){
+        switch($this->jabatan){
+            case 1:
+                return 'CEO';
+            case 2:
+                return 'COO';
+            case 3:
+                return 'Supervisor';
+            default:
+                return 'Unknow';
+        }
+    }
 }
 
 
