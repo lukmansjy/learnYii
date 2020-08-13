@@ -134,8 +134,9 @@ class SiteController extends Controller
     public function actionFormPekerja(){
         $model = new Pekerja;
         if( $model->load(Yii::$app->request->post()) && $model->validate() ){
-            echo 'sukses';
-            die();
+           $model->save();
+           Yii::$app->session->setFlash('success', 'Data Berhasil Disimpan');
+           return $this->redirect(['/site/form-pekerja']);
         }
         return $this->render('formPekerja', compact('model'));
     }

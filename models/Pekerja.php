@@ -2,10 +2,9 @@
 
 namespace app\models;
 
-use yii\base\Model;
+use yii\db\ActiveRecord;
 
-class Pekerja extends Model{
-    public $nama, $jabatan, $email, $keterangan;
+class Pekerja extends ActiveRecord{
     public function rules(){
         return [
             [['nama', 'jabatan', 'email', 'keterangan'], 'required'],

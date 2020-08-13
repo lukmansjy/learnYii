@@ -7,6 +7,13 @@ use yii\helpers\Html;
 <div class="row">
     <div class="col-sm-6">
         <?php
+            // if(Yii::$app->session->hasFlash('success')){
+            //     echo "<div class='alert alert-success'>" .
+            //             Yii::$app->session->getFlash('success') .
+            //         "</div>";
+            // }
+        ?>
+        <?php
             $form = ActiveForm::begin([
                 'method' => 'post',
                 'action' => Url::to(['site/form-pekerja']) 
