@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Benchmark;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -26,6 +27,16 @@ class BenchmarkController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['update'],
+                'rules' => [
+                    [
+                        'allow' => 'true',
+                        'roles' => ['@']
+                    ]
+                ]
+            ]
         ];
     }
 
